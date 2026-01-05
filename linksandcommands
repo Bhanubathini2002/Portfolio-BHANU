@@ -1,0 +1,5 @@
+https://dashboard.emailjs.com/admin/templates
+
+to deploy
+npm i --save-dev gh-pages
+npm run deploy
