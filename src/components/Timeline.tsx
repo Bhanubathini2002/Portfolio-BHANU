@@ -16,29 +16,29 @@ function Timeline() {
             className="vertical-timeline-element--work"
             contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
             contentArrowStyle={{ borderRight: '7px solid  white' }}
-            date="2022 - present"
+            date="Jan, 2023 - present"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Technology Consultant</h3>
-            <h4 className="vertical-timeline-element-subtitle">Dallas, TX</h4>
+            <h3 className="vertical-timeline-element-title">Gen AI Engineer</h3>
+            <h4 className="vertical-timeline-element-subtitle">Mondee,Fairmont, CA</h4>
             <p>
-              Full-stack Web Development, GenAI/LLM, Project Management, Business Development
+              GenAI/LLM, Project Management,LLMs, RAG, Embeddings, Vector Databases, Prompting/Evaluation, FastAPI Deployment, Observability. 
             </p>
           </VerticalTimelineElement>
           <VerticalTimelineElement
             className="vertical-timeline-element--work"
-            date="2020 - 2022"
+            date="Apr, 2020 - Nov, 2022"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
-            <h3 className="vertical-timeline-element-title">Full Stack Engineer</h3>
-            <h4 className="vertical-timeline-element-subtitle">Laie, HI</h4>
+            <h3 className="vertical-timeline-element-title">Machine Learning Engineer</h3>
+            <h4 className="vertical-timeline-element-subtitle">Cosmic Reality,Hyderabad, TG</h4>
             <p>
-              Frontend Development, Backend Development, User Experience, Team Leading
+              Machine Learning, Feature Engineering, Model Training & Evaluation, MLOps, Model Deployment (APIs), Monitoring.
             </p>
           </VerticalTimelineElement>
-          <VerticalTimelineElement
+          {/* <VerticalTimelineElement
             className="vertical-timeline-element--work"
             date="2021 - 2021"
             iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
@@ -61,7 +61,7 @@ function Timeline() {
             <p>
               Automation, Data Governance, Statistical Analysis
             </p>
-          </VerticalTimelineElement>
+          </VerticalTimelineElement> */}
         </VerticalTimeline>
       </div>
     </div>

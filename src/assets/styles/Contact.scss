@@ -3,25 +3,25 @@
   vertical-align: middle;
   margin-right: 5px;
 }
-
 .contact-form {
-  padding-top: 20px;
-
-  button {
-    float: right;
-    background-color: white;
-    color: #050f0b;
-  }
-
-  button:hover {
-    background-color: #5000ca;
-    color: white;
-  }
-
+  
   fieldset {
-    background-color: white;
+    background-color: transparent; /* keep fieldset only as border */ /* [web:38] */
+  }
+
+  /* put the white background on the real input container */
+  .MuiOutlinedInput-root {
+    background-color: white; /* [web:38] */
+  }
+  MuiInputBase-inputMultiline {
+    padding: 0px 14px;  /* optional: makes it feel less tall */
+  }
+
+  textarea {
+    height:  -20px;       /* pick what you want */
   }
 }
+
 
 label {
   font-size: 1.2rem;
@@ -30,8 +30,8 @@ label {
 
 .form-flex {
   display: flex;
-  gap: 15px;
-  padding-bottom: 15px;
+  gap: 5px;
+  padding-bottom: 0px;
 }
 
 .form-flex .MuiFormControl-root {
@@ -44,5 +44,5 @@ form {
 
 .body-form {
   width: 100% !important;
-  margin-bottom: 15px !important;
+  margin-bottom: -60px !important;
 }
