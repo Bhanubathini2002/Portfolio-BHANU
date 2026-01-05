@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/Portfolio-BHANU/static/css/main.2935963f.css",
-    "main.js": "/Portfolio-BHANU/static/js/main.d5cb071d.js",
-    "static/js/453.b05d8aa5.chunk.js": "/Portfolio-BHANU/static/js/453.b05d8aa5.chunk.js",
-    "static/media/mock08.png": "/Portfolio-BHANU/static/media/mock08.145153ff4ce18c1120bb.png",
-    "static/media/mock09.png": "/Portfolio-BHANU/static/media/mock09.e216530442da0ac0a34e.png",
-    "static/media/mock10.png": "/Portfolio-BHANU/static/media/mock10.dae8fd8a3d97764dcc64.png",
-    "static/media/bg-light.png": "/Portfolio-BHANU/static/media/bg-light.bac0efb485244a522981.png",
-    "static/media/profilephoto.png": "/Portfolio-BHANU/static/media/profilephoto.8793dd5d5372d517aaee.png",
-    "static/media/bg-dark.png": "/Portfolio-BHANU/static/media/bg-dark.f420c6b8458af72de935.png",
-    "index.html": "/Portfolio-BHANU/index.html",
-    "main.2935963f.css.map": "/Portfolio-BHANU/static/css/main.2935963f.css.map",
-    "main.d5cb071d.js.map": "/Portfolio-BHANU/static/js/main.d5cb071d.js.map",
-    "453.b05d8aa5.chunk.js.map": "/Portfolio-BHANU/static/js/453.b05d8aa5.chunk.js.map"
+    "main.css": "/Bhanubathini2002/Portfolio-BHANU.git/static/css/main.b5da9080.css",
+    "main.js": "/Bhanubathini2002/Portfolio-BHANU.git/static/js/main.ea3d2574.js",
+    "static/js/453.b05d8aa5.chunk.js": "/Bhanubathini2002/Portfolio-BHANU.git/static/js/453.b05d8aa5.chunk.js",
+    "static/media/mock08.png": "/Bhanubathini2002/Portfolio-BHANU.git/static/media/mock08.145153ff4ce18c1120bb.png",
+    "static/media/mock09.png": "/Bhanubathini2002/Portfolio-BHANU.git/static/media/mock09.e216530442da0ac0a34e.png",
+    "static/media/mock10.png": "/Bhanubathini2002/Portfolio-BHANU.git/static/media/mock10.dae8fd8a3d97764dcc64.png",
+    "static/media/bg-light.png": "/Bhanubathini2002/Portfolio-BHANU.git/static/media/bg-light.bac0efb485244a522981.png",
+    "static/media/profilephoto.png": "/Bhanubathini2002/Portfolio-BHANU.git/static/media/profilephoto.8793dd5d5372d517aaee.png",
+    "static/media/bg-dark.png": "/Bhanubathini2002/Portfolio-BHANU.git/static/media/bg-dark.f420c6b8458af72de935.png",
+    "index.html": "/Bhanubathini2002/Portfolio-BHANU.git/index.html",
+    "main.b5da9080.css.map": "/Bhanubathini2002/Portfolio-BHANU.git/static/css/main.b5da9080.css.map",
+    "main.ea3d2574.js.map": "/Bhanubathini2002/Portfolio-BHANU.git/static/js/main.ea3d2574.js.map",
+    "453.b05d8aa5.chunk.js.map": "/Bhanubathini2002/Portfolio-BHANU.git/static/js/453.b05d8aa5.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2935963f.css",
-    "static/js/main.d5cb071d.js"
+    "static/css/main.b5da9080.css",
+    "static/js/main.ea3d2574.js"
   ]
 }
