@@ -88,3 +88,15 @@ You can choose your preferred service (e.g., [Netlify](https://www.netlify.com/)
 
 
    https://dashboard.emailjs.com/admin/templates
+   
+   git status
+   git pull origin main
+   git add .
+   git commit -m "added files"
+   git push -u origin main
+
+
+   npm install 
+   npm install --save -dev gh-pages
+   npm run deploy
+   
