@@ -1,8 +1,9 @@
 {
   "files": {
     "main.css": "/Portfolio-BHANU/static/css/main.89e5f3a2.css",
-    "main.js": "/Portfolio-BHANU/static/js/main.644db4b9.js",
+    "main.js": "/Portfolio-BHANU/static/js/main.4c84cf6e.js",
     "static/js/453.b05d8aa5.chunk.js": "/Portfolio-BHANU/static/js/453.b05d8aa5.chunk.js",
+    "static/media/mock07.png": "/Portfolio-BHANU/static/media/mock07.b915594a8120c0556f92.png",
     "static/media/profilephoto.png": "/Portfolio-BHANU/static/media/profilephoto.9f9538b07955646dc556.png",
     "static/media/mock08.png": "/Portfolio-BHANU/static/media/mock08.145153ff4ce18c1120bb.png",
     "static/media/mock09.png": "/Portfolio-BHANU/static/media/mock09.e216530442da0ac0a34e.png",
@@ -11,11 +12,11 @@
     "static/media/bg-dark.png": "/Portfolio-BHANU/static/media/bg-dark.f420c6b8458af72de935.png",
     "index.html": "/Portfolio-BHANU/index.html",
     "main.89e5f3a2.css.map": "/Portfolio-BHANU/static/css/main.89e5f3a2.css.map",
-    "main.644db4b9.js.map": "/Portfolio-BHANU/static/js/main.644db4b9.js.map",
+    "main.4c84cf6e.js.map": "/Portfolio-BHANU/static/js/main.4c84cf6e.js.map",
     "453.b05d8aa5.chunk.js.map": "/Portfolio-BHANU/static/js/453.b05d8aa5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.89e5f3a2.css",
-    "static/js/main.644db4b9.js"
+    "static/js/main.4c84cf6e.js"
   ]
 }
