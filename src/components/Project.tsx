@@ -32,8 +32,8 @@ function Project() {
                 <p>JobDay is an NL‑to‑SQL assistant for job-market analytics that converts natural-language questions into executable SQL over a jobs dataset, enabling fast insights without manual querying. It follows a schema-grounded approach to reduce hallucinated tables/columns and improve query correctness.</p>
             </div>
             <div className="project">
-                <a href="https://github.com/Bhanubathini2002/PRODUCT_RECOMMENDER_SYSTEM.git" target="_blank" rel="noreferrer"><img src={mock07} className="zoom" alt="thumbnail" width="100%"/></a>
-                <a href="https://github.com/Bhanubathini2002/PRODUCT_RECOMMENDER_SYSTEM.git" target="_blank" rel="noreferrer"><h2>1000+ AI Projects</h2></a>
+                <a href="https://github.com/Bhanubathini2002/1000-AI-projects.git" target="_blank" rel="noreferrer"><img src={mock07} className="zoom" alt="thumbnail" width="100%"/></a>
+                <a href="https://github.com/Bhanubathini2002/1000-AI-projects.git" target="_blank" rel="noreferrer"><h2>1000+ AI Projects</h2></a>
                 <p>1000+ real-world projects across NLP, Computer Vision, Reinforcement Learning, Time Series, Recommendation Systems, Generative AI (GANs, Diffusion Models), Graph Neural Networks, and Healthcare AI. Implemented production-ready solutions using PyTorch, TensorFlow, LangChain, and cloud platforms (GCP, Azure, AWS).</p>
             </div>
         </div>
