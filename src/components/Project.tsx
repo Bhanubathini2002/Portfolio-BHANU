@@ -36,6 +36,11 @@ function Project() {
                 <a href="https://github.com/Bhanubathini2002/1000-AI-projects.git" target="_blank" rel="noreferrer"><h2>1000+ AI Projects</h2></a>
                 <p>1000+ real-world projects across NLP, Computer Vision, Reinforcement Learning, Time Series, Recommendation Systems, Generative AI (GANs, Diffusion Models), Graph Neural Networks, and Healthcare AI. Implemented production-ready solutions using PyTorch, TensorFlow, LangChain, and cloud platforms (GCP, Azure, AWS).</p>
             </div>
+            <div className="project">
+                <a href="https://link.springer.com/chapter/10.1007/978-3-031-92178-0_4" target="_blank" rel="noreferrer"><img src={mock06} className="zoom" alt="thumbnail" width="100%"/></a>
+                <a href="https://link.springer.com/chapter/10.1007/978-3-031-92178-0_4" target="_blank" rel="noreferrer"><h2>Conversational AI Research Work</h2></a>
+                <p>A CATA 2025 research framework for deploying conversational AI with strong privacy, security, ethical transparency, and harm-prevention guardrails.</p>
+            </div>
         </div>
     </div>
     );
