@@ -29,7 +29,7 @@ function Project() {
             <div className="project">
                 <a href="https://github.com/Bhanubathini2002/PRODUCT_RECOMMENDER_SYSTEM.git" target="_blank" rel="noreferrer"><img src={mock08} className="zoom" alt="thumbnail" width="100%"/></a>
                 <a href="https://github.com/Bhanubathini2002/PRODUCT_RECOMMENDER_SYSTEM.git" target="_blank" rel="noreferrer"><h2>Job Day</h2></a>
-                <p>JobDay is an NL‑to‑SQL assistant for job-market analytics that converts natural-language questions into executable SQL over a jobs dataset, enabling fast insights without manual querying. It follows a schema-grounded approach to reduce hallucinated tables/columns and improve query correctness.</p>
+                <p>JobDay is a recruiting workflow tool that centralizes job applications into a single candidate profile, tracks each role through clear pipeline stages, and keeps your resume and details consistent across submissions.</p>
             </div>
             <div className="project">
                 <a href="https://github.com/Bhanubathini2002/1000-AI-projects.git" target="_blank" rel="noreferrer"><img src={mock07} className="zoom" alt="thumbnail" width="100%"/></a>
