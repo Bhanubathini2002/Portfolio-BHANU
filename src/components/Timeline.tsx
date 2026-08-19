@@ -33,7 +33,7 @@ function Timeline() {
             icon={<FontAwesomeIcon icon={faBriefcase} />}
           >
             <h3 className="vertical-timeline-element-title">Machine Learning Engineer</h3>
-            <h4 className="vertical-timeline-element-subtitle">Cosmic Reality,Hyderabad, TG</h4>
+            <h4 className="vertical-timeline-element-subtitle">Cosmic Reality,Missouri, MO</h4>
             <p>
               Machine Learning, Feature Engineering, Model Training & Evaluation, MLOps, Model Deployment (APIs), Monitoring.
             </p>
