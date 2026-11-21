@@ -1,70 +1,30 @@
 import React from "react";
-import '@fortawesome/free-regular-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBriefcase } from '@fortawesome/free-solid-svg-icons';
-import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
-import '../assets/styles/Timeline.scss'
+import "../assets/styles/Timeline.scss";
+import { roles } from "../data/content";
+import Tags from "./Tags";
 
 function Timeline() {
   return (
-    <div id="history">
-      <div className="items-container">
-        <h1>Career History</h1>
-        <VerticalTimeline>
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            contentStyle={{ background: 'white', color: 'rgb(39, 40, 34)' }}
-            contentArrowStyle={{ borderRight: '7px solid  white' }}
-            date="Jan, 2023 - present"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
-            icon={<FontAwesomeIcon icon={faBriefcase} />}
-          >
-            <h3 className="vertical-timeline-element-title">Gen AI Engineer</h3>
-            <h4 className="vertical-timeline-element-subtitle">Mondee,Fairmont, CA</h4>
-            <p>
-              GenAI/LLM, Project Management,LLMs, RAG, Embeddings, Vector Databases, Prompting/Evaluation, FastAPI Deployment, Observability. 
-            </p>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            date="Apr, 2020 - Nov, 2022"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
-            icon={<FontAwesomeIcon icon={faBriefcase} />}
-          >
-            <h3 className="vertical-timeline-element-title">Machine Learning Engineer</h3>
-            <h4 className="vertical-timeline-element-subtitle">Cosmic Reality,Missouri, MO</h4>
-            <p>
-              Machine Learning, Feature Engineering, Model Training & Evaluation, MLOps, Model Deployment (APIs), Monitoring.
-            </p>
-          </VerticalTimelineElement>
-          {/* <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            date="2021 - 2021"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
-            icon={<FontAwesomeIcon icon={faBriefcase} />}
-          >
-            <h3 className="vertical-timeline-element-title">Staff Engineer Intern</h3>
-            <h4 className="vertical-timeline-element-subtitle">Laie, HI</h4>
-            <p>
-              Full-stack Development, API Development, User Experience
-            </p>
-          </VerticalTimelineElement>
-          <VerticalTimelineElement
-            className="vertical-timeline-element--work"
-            date="2020 - 2020"
-            iconStyle={{ background: '#5000ca', color: 'rgb(39, 40, 34)' }}
-            icon={<FontAwesomeIcon icon={faBriefcase} />}
-          >
-            <h3 className="vertical-timeline-element-title">Data Analyst Intern</h3>
-            <h4 className="vertical-timeline-element-subtitle">Tokyo, Japan</h4>
-            <p>
-              Automation, Data Governance, Statistical Analysis
-            </p>
-          </VerticalTimelineElement> */}
-        </VerticalTimeline>
+    <section className="block" id="history" aria-labelledby="history-heading">
+      <div className="wrap">
+        <div className="block-head">
+          <h2 id="history-heading">Career history</h2>
+          <p>Machine learning engineering since 2020, GenAI engineering since 2023.</p>
+        </div>
+        <ol className="roles">
+          {roles.map((role) => (
+            <li className="role" key={role.title}>
+              <div className="when">{role.when}</div>
+              <div>
+                <h3>{role.title}</h3>
+                <div className="where">{role.where}</div>
+                <Tags items={role.tags} />
+              </div>
+            </li>
+          ))}
+        </ol>
       </div>
-    </div>
+    </section>
   );
 }
 

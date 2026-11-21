@@ -1,37 +1,35 @@
 import React from "react";
-import GitHubIcon from '@mui/icons-material/GitHub';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import '../assets/styles/Main.scss';
-import profi from "../assets/images/profilephoto.png";
-import EmailIcon from "@mui/icons-material/Email";
-import PhoneIcon from "@mui/icons-material/Phone";
+import "../assets/styles/Main.scss";
+import profile from "../assets/images/profilephoto.png";
+import CopilotPreview from "./CopilotPreview";
 
 function Main() {
-
   return (
-    <div className="container">
-      <div className="about-section">
-        <div className="image-wrapper">
-          <img src={profi} alt="Avatar" />
+    <section className="hero" id="top" aria-labelledby="hero-heading">
+      <div className="wrap hero-grid">
+        <div className="hero-text rise">
+          <div className="who">
+            <img src={profile} alt="Bhanu Prakash Bathini" width={40} height={40} />
+            <div>
+              <b>Bhanu Prakash Bathini</b>
+              <span>Full stack AI engineer</span>
+            </div>
+          </div>
+          <h1 id="hero-heading">I build LLM agents, RAG pipelines and NL‑to‑SQL tools</h1>
+          <p className="lede">
+            Python agents with retrieval, vector databases and evaluation pipelines, shipped as products people use.
+            Gen AI engineer at Mondee since 2023.
+          </p>
+          <div className="actions">
+            <a className="btn btn-primary" href="#projects">View projects</a>
+            <a className="btn btn-secondary" href="#contact">Contact</a>
+          </div>
         </div>
-        <div className="content">
-          <div className="social_icons">
-            <a href="https://github.com/Bhanubathini2002" target="_blank" rel="noreferrer"><GitHubIcon/></a>
-            <a href="https://www.linkedin.com/in/bathini-bhanu-prakash-1106151b5/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
-            <a href="mailto:bbathini57@gmail.com"><EmailIcon/></a>
-            <a href="tel:+16605282536"><PhoneIcon/></a>
-          </div>
-          <h1>Bhanu Prakash</h1>
-          <p>Full Stack AI Engineer</p>
-          <div className="mobile_social_icons">
-            <a href="https://github.com/Bhanubathini2002" target="_blank" rel="noreferrer"><GitHubIcon/></a>
-            <a href="https://www.linkedin.com/in/bathini-bhanu-prakash-1106151b5/" target="_blank" rel="noreferrer"><LinkedInIcon/></a>
-            <a href="mailto:bbathini57@gmail.com"><EmailIcon/></a>
-            <a href="tel:+16605282536"><PhoneIcon/></a>
-          </div>
+        <div className="rise rise-delay">
+          <CopilotPreview />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

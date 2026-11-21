@@ -1,48 +1,35 @@
-.contact_wrapper svg {
-  font-size: 1em;
-  vertical-align: middle;
-  margin-right: 5px;
-}
-.contact-form {
-  
-  fieldset {
-    background-color: transparent; /* keep fieldset only as border */ /* [web:38] */
+.contact { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 32px; }
+.contact-lede { margin-top: 12px; color: var(--text-2); }
+.reach {
+  margin: 24px 0 0; padding: 0; list-style: none; display: grid; gap: 4px;
+  a {
+    display: flex; align-items: center; gap: 10px; height: 36px;
+    color: var(--text-2); font-size: 14px; transition: color 150ms var(--ease);
+    &:hover { color: var(--text); }
   }
-
-  /* put the white background on the real input container */
-  .MuiOutlinedInput-root {
-    background-color: white; /* [web:38] */
-  }
-  MuiInputBase-inputMultiline {
-    padding: 0px 14px;  /* optional: makes it feel less tall */
-  }
-
-  textarea {
-    height:  -20px;       /* pick what you want */
-  }
+  .icon { color: var(--text-3); }
 }
-
-
-label {
-  font-size: 1.2rem;
-  font-family: 'DomaineDispNar-Medium', sans-serif;
+.contact form { display: grid; gap: 16px; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.field { display: grid; gap: 6px; }
+.field label { font-size: 13px; color: var(--text-2); }
+.field input, .field textarea {
+  width: 100%; font: 15px/22px var(--font); color: var(--text);
+  background: var(--surface); border: 1px solid var(--line-strong); border-radius: 10px;
+  padding: 10px 12px;
+  transition: border-color 150ms var(--ease);
+  &:hover { border-color: color-mix(in srgb, var(--text) 24%, transparent); }
+  &:focus { outline: none; border-color: var(--accent); }
 }
+.field textarea { min-height: 160px; resize: vertical; }
+.field.err input, .field.err textarea { border-color: var(--negative); }
+.hint { font-size: 12px; color: var(--negative); min-height: 16px; }
+.form-foot { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+.form-status { font-size: 13px; color: var(--text-2); }
 
-.form-flex {
-  display: flex;
-  gap: 5px;
-  padding-bottom: 0px;
+@media (max-width: 960px) {
+  .contact { grid-template-columns: minmax(0, 1fr); }
 }
-
-.form-flex .MuiFormControl-root {
-  width: 100%;
-}
-
-form {
-  width: 100% !important;
-}
-
-.body-form {
-  width: 100% !important;
-  margin-bottom: -60px !important;
+@media (max-width: 720px) {
+  .pair { grid-template-columns: minmax(0, 1fr); }
 }

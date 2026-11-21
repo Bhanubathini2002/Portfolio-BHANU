@@ -1,131 +1,117 @@
-import React, { useState } from 'react';
-import '../assets/styles/Contact.scss';
-import emailjs from '@emailjs/browser';
+import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
+import "../assets/styles/Contact.scss";
+import Icon, { IconName } from "./Icon";
+import { links } from "../data/content";
 
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import SendIcon from '@mui/icons-material/Send';
-import TextField from '@mui/material/TextField';
+type FormState = { name: string; reach: string; message: string };
+type Status = "idle" | "sending" | "sent" | "failed";
 
-type FormState = {
-  name: string;
-  email: string;
-  message: string;
+const EMPTY: FormState = { name: "", reach: "", message: "" };
+
+const ERROR_TEXT: Record<keyof FormState, string> = {
+  name: "Enter your name",
+  reach: "Enter an email or phone number",
+  message: "Write a message",
 };
 
+const STATUS_TEXT: Record<Status, string> = {
+  idle: "",
+  sending: "Sending",
+  sent: "Message sent",
+  failed: `Could not send. Email ${links.email} directly.`,
+};
+
+const reachLinks: { icon: IconName; label: string; href: string; external?: boolean }[] = [
+  { icon: "mail", label: links.email, href: `mailto:${links.email}` },
+  { icon: "phone", label: links.phoneLabel, href: `tel:${links.phoneHref}` },
+  { icon: "github", label: "GitHub", href: links.github, external: true },
+  { icon: "linkedin", label: "LinkedIn", href: links.linkedin, external: true },
+];
+
+export function validate(form: FormState): Record<keyof FormState, boolean> {
+  return {
+    name: form.name.trim() === "",
+    reach: form.reach.trim() === "",
+    message: form.message.trim() === "",
+  };
+}
+
 function Contact() {
-  const [formData, setFormData] = useState<FormState>({
-    name: '',
-    email: '',
-    message: '',
-  });
+  const [form, setForm] = useState<FormState>(EMPTY);
+  const [errors, setErrors] = useState({ name: false, reach: false, message: false });
+  const [status, setStatus] = useState<Status>("idle");
 
-  const [errors, setErrors] = useState({
-    name: false,
-    email: false,
-    message: false,
-  });
+  const update = (key: keyof FormState) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const value = e.target.value;
+    setForm((prev) => ({ ...prev, [key]: value }));
+    setErrors((prev) => ({ ...prev, [key]: false }));
+  };
 
-  const handleChange =
-    (key: keyof FormState) =>
-    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-      setFormData((prev) => ({ ...prev, [key]: e.target.value }));
-      setErrors((prev) => ({ ...prev, [key]: false }));
-    };
-
-  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+  const submit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const nextErrors = validate(form);
+    setErrors(nextErrors);
+    if (Object.values(nextErrors).some(Boolean)) return;
 
-    const nameError = formData.name.trim() === '';
-    const emailError = formData.email.trim() === '';
-    const messageError = formData.message.trim() === '';
-
-    setErrors({
-      name: nameError,
-      email: emailError,
-      message: messageError,
-    });
-
-    if (nameError || emailError || messageError) return;
-
-    // EmailJS recommended usage pattern supports passing publicKey in options. [web:3]
+    setStatus("sending");
     try {
       await emailjs.send(
-        'service_214yk41',
-        'template_c47d30c',
-        {
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        },
-        { publicKey: 'i8IEKmZnyv_M2hWht' }
+        "service_214yk41",
+        "template_c47d30c",
+        { name: form.name, email: form.reach, message: form.message },
+        { publicKey: "i8IEKmZnyv_M2hWht" }
       );
-
-      setFormData({ name: '', email: '', message: '' });
+      setForm(EMPTY);
+      setStatus("sent");
     } catch (err) {
-      console.error('EmailJS failed:', err);
+      console.error("EmailJS failed:", err);
+      setStatus("failed");
     }
   };
 
-  return (
-    <div id="contact">
-      <div className="items-container">
-        <div className="contact_wrapper">
-          <h1>Contact Me</h1>
-          <p>Got a project waiting to be realized? Let's collaborate and make it happen!</p>
-
-          <Box
-            component="form"
-            onSubmit={sendEmail}
-            noValidate
-            autoComplete="off"
-            className="contact-form"
-          >
-            <div className="form-flex">
-              <TextField
-                required
-                label="Your Name"
-                placeholder="What's your name?"
-                value={formData.name}
-                onChange={handleChange('name')}
-                error={errors.name}
-                helperText={errors.name ? 'Please enter your name' : ' '}
-                fullWidth
-              />
-
-              <TextField
-                required
-                label="Email / Phone"
-                placeholder="How can I reach you?"
-                value={formData.email}
-                onChange={handleChange('email')}
-                error={errors.email}
-                helperText={errors.email ? 'Please enter your email or phone number' : ' '}
-                fullWidth
-              />
-            </div>
-
-            <TextField
-              required
-              label="Message"
-              placeholder="Send me any inquiries or questions"
-              multiline
-              rows={10}
-              className="body-form"
-              value={formData.message}
-              onChange={handleChange('message')}
-              error={errors.message}
-              helperText={errors.message ? 'Please enter the message' : ' '}
-              fullWidth
-            />
-
-            <Button type="submit" variant="contained" endIcon={<SendIcon />}>
-              Send
-            </Button>
-          </Box>
-        </div>
-      </div>
+  const field = (key: keyof FormState, label: string, multiline = false) => (
+    <div className={`field${errors[key] ? " err" : ""}`}>
+      <label htmlFor={`f-${key}`}>{label}</label>
+      {multiline ? (
+        <textarea id={`f-${key}`} value={form[key]} onChange={update(key)} aria-invalid={errors[key]} />
+      ) : (
+        <input id={`f-${key}`} value={form[key]} onChange={update(key)} aria-invalid={errors[key]} />
+      )}
+      <span className="hint">{errors[key] ? ERROR_TEXT[key] : ""}</span>
     </div>
+  );
+
+  return (
+    <section className="block" id="contact" aria-labelledby="contact-heading">
+      <div className="wrap contact">
+        <div>
+          <h2 id="contact-heading">Contact</h2>
+          <p className="contact-lede">Send a note about a project or a role.</p>
+          <ul className="reach">
+            {reachLinks.map((item) => (
+              <li key={item.label}>
+                <a href={item.href} {...(item.external ? { target: "_blank", rel: "noreferrer" } : {})}>
+                  <Icon name={item.icon} />
+                  {item.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <form onSubmit={submit} noValidate>
+          <div className="pair">
+            {field("name", "Name")}
+            {field("reach", "Email or phone")}
+          </div>
+          {field("message", "Message", true)}
+          <div className="form-foot">
+            <button className="btn btn-primary" type="submit" disabled={status === "sending"}>Send message</button>
+            <span className="form-status" role="status">{STATUS_TEXT[status]}</span>
+          </div>
+        </form>
+      </div>
+    </section>
   );
 }
 

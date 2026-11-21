@@ -1,27 +1,27 @@
-import React, { useMemo } from "react";
+import React from "react";
 import "../assets/styles/About.scss";
 
-const About = () => {
-  const text = useMemo(
-    () =>
-      `
-Bhanu Prakash Bathini is a software engineer concentrating on Generative AI, with particular emphasis on designing and operationalizing agentic systems that translate advanced LLM capabilities into dependable, user-facing products. He has built, tested, and deployed scalable AI agents in Python, leveraging modern agent frameworks, Retrieval-Augmented Generation (RAG) patterns, vector databases, and structured evaluation pipelines to ensure quality, safety, and consistency in real-world usage. Alongside this, he actively develops and refines a public portfolio, including the “Data Copilot” project, with the goal of presenting work that is not only technically rigorous but also product-minded and polished. His broader trajectory reflects a deliberate commitment to deepening expertise in LLMs, RAG architectures, and multi-agent systems, while maintaining strong software-engineering fundamentals and an execution-first approach to shipping complete solutions.
-`.trim(),
-    []
-  );
-
+function About() {
   return (
-    <section id="about" className="aboutFx">
-      <div className="items-container">
-        <div className="aboutFx__wrap">
-          <div className="aboutFx__content">
-            <h1>About</h1>
-            <p className="aboutFx__line">{text}</p>
-          </div>
+    <section className="block" id="about" aria-labelledby="about-heading">
+      <div className="wrap block-head">
+        <h2 id="about-heading">About</h2>
+        <div className="about-body">
+          <p>
+            I'm a software engineer focused on generative AI, mostly agentic systems that turn LLM capabilities into
+            dependable, user-facing products. I build, test and deploy AI agents in Python with modern agent frameworks,
+            retrieval-augmented generation, vector databases and structured evaluation pipelines that keep quality,
+            safety and consistency in check in real use.
+          </p>
+          <p>
+            I'm deepening my work in LLMs, RAG architectures and multi-agent systems while keeping strong software
+            engineering fundamentals, and I like to ship complete solutions. Data Copilot is the project that shows
+            this best.
+          </p>
         </div>
       </div>
     </section>
   );
-};
+}
 
 export default About;

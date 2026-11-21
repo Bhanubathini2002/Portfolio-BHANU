@@ -1,38 +1,12 @@
-.vertical-timeline span {
-    color: white;
-    font-family: 'Courier Prime', monospace;
+.roles { margin: 0; padding: 0; list-style: none; }
+.role {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 32px;
+  padding: 24px 0; border-top: 1px solid var(--line);
+  &:first-child { border-top: 0; padding-top: 0; }
 }
+.when { color: var(--text-3); font: 13px/24px var(--mono); font-variant-numeric: tabular-nums; }
+.where { color: var(--text-2); font-size: 14px; margin: 2px 0 12px; }
 
-.vertical-timeline p {
-    color: rgb(39, 40, 34);
-}
-
-.vertical-timeline-element p {
-    color: rgb(39, 40, 34);
-}
-
-.vertical-timeline-element h3 {
-    color: rgb(39, 40, 34);
-}
-
-.vertical-timeline-element h4 {
-    color: rgb(39, 40, 34);
-}
-
-.vertical-timeline-element span {
-    color: rgb(39, 40, 34);
-}
-
-.vertical-timeline-element .vertical-timeline-element-date {
-    color: white;
-}
-
-.svg-inline--fa {
-    color: white;
-}
-
-@media screen and (max-width: 1170px) {
-    .vertical-timeline-element .vertical-timeline-element-date {
-        color: rgb(39, 40, 34);
-    }
+@media (max-width: 960px) {
+  .role { grid-template-columns: minmax(0, 1fr); gap: 8px; }
 }
